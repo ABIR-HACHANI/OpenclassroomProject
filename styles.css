@@ -1,10 +1,9 @@
-
 body
 {
-    box-sizing: border-box;
-    font-family:'Raleway',cursive;
-    margin: 10px;
-    padding: 0;
+  box-sizing: border-box;
+  font-family:'Raleway',cursive;
+  margin: 10px;
+  padding: 0;
 } 
 
 #global
@@ -13,7 +12,6 @@ body
   flex-direction: column;
   justify-content: center;
   margin: 0 auto ;
-
   max-width: 1400px; 
 }
 
@@ -27,18 +25,16 @@ a
 
 h1 
 {
-    font-size: large;
+  font-size: large;
 }
 
 p 
 {
-    font-size: small;
+  font-size: small;
+  font-weight: normal;
 }
 
-h3 
-{
-    font-weight: bold;
-}
+
 
 /*Entête*/
 
@@ -67,9 +63,8 @@ nav a
 
 .ancre_link
 {
-  padding-top: 20px;
+  padding-top: 25px;
   font-size:small;
-  
 }
 
 nav a:hover
@@ -105,8 +100,7 @@ main
 
 .paragraphe_1
 {
-  font-size:small;
-  font-weight: bold;
+  font-size:medium;
   padding: 0;
   margin: 0;
 }
@@ -464,6 +458,7 @@ main
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-left: 10px;
 }
 
 .titre_Activités_à_Marseille 
@@ -479,27 +474,36 @@ main
   flex-direction: row;
   justify-content:space-between;
   height: 450px;
+
 }
 
 .activité
 {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   border-radius: 20px;
-  box-shadow: 10px 5px 5px #F2F2F2 ;
   margin-bottom: 30px;
-  margin-left: 20px;
   width: 35%;
+}
+
+#activité_1,#activité_4
+{
+  margin-right: 40px;
 }
 
 #activité_2
 {
-  margin-bottom: 20px;
+  margin-bottom: 35px;
+}
+#activité_4
+{
+  margin-left: 40px;
 }
 
 #activité_5
 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 }
 
 .photo_activité
@@ -512,18 +516,19 @@ main
 
 .titre_activité
 {
-  padding-left: 10px;
+  padding-left: 20px;
 }
 
 .activité_enfant
 {
   width: 100%;
-  border-radius: 20px;
+  border-radius: 10px;
+  box-shadow: 10px 5px 5px #F2F2F2 ;  
 }
 
 #photo_1,#photo_4
 {
-  height: 350px;
+  height: 370px;
 }
 
 #photo_2
@@ -583,6 +588,7 @@ main
 .footer_lien
 {
   margin-bottom: 10px;
+  font-weight: normal;
 }
 
 .footer_lien:hover 
@@ -616,36 +622,25 @@ main
     flex-wrap: wrap;
     margin-bottom:20px;
   }
-  .titre_hebergements_populaires
-  {
-    justify-content: flex-start;
-
-  }
-  .titre_les_plus_populaires
-  {
-    margin-right: 20px;
-  }
+  
+  
   .hebergement_les_plus_populaires
   {
     display: flex;
     flex-direction:row;
-    justify-content: space-around;
-    
-  }
-  .box_populaire
-  {
-    width:270px;
-    margin-right: 10px;
+    justify-content:space-between;
   }
 
+  .box_populaire
+  {
+    width: 90%;
+  }
+  
   .container_hebergements_a_marseille
   {
     margin-top: 20px;
   }
-  
- 
-
-  
+   
 }
 /*Sur les téléphones*/
 @media screen and (max-width : 768px)
@@ -658,14 +653,46 @@ main
     align-content: center;
     justify-content: center;
     padding: 0;
-    margin: 0;
+    padding-bottom: 10px;
   }
 
-  nav a:hover
+  nav a
   {
-    border-top: none;
+  display: inline-flex;
+  flex-direction: column-reverse;
+  margin-left:10px ;
+  position: relative;
+  }
+
+  .ancre_link
+  {
+    padding-bottom: 10px; 
+  }
+
+  
+  nav a:hover
+  { 
     color:#0065fc;
-    text-decoration: underline  #0065fc;;
+    border-top: none;
+  }
+  
+  nav a::before 
+  {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0065fc;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+
+  nav a:hover::before 
+  {
+    transform: scaleX(1);
   }
 
   .button_rechercher
@@ -750,15 +777,16 @@ main
     box-shadow: 10px 5px 5px #F2F2F2 ;
   }
 
+  #container_hebergements_populaires
+  {
+    border-radius:0;
+  }
+
   .titre_hebergements_populaires
   {
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   
-  .titre_les_plus_populaires
-  {
-    margin-right: 20px;
-  }
   .photo_populaire
   {
     object-fit: cover;
@@ -771,36 +799,38 @@ main
     flex-direction: column;
     align-items: flex-start; 
     height: 100%;
-    width:100%;
+    margin-left: 20px; 
+    margin-right: 20px;
   }
-
+  
   .activité
   {
-    margin-left: 20px;
     align-items: flex-start;
-    margin-right: 20px;
     width: 100%;
+  }
+  #activité_4
+  {
+    margin-left: 0px;
   }
 
   #photo_1,#photo_2,#photo_3,#photo_4,#photo_5,#photo_6
   {
     object-fit: cover;
-    width: 100%;
     height:120px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
+    box-shadow: 10px 5px 5px #F2F2F2 ;
   }
 
   .footer_bloc 
   {
     display:inline-flex;
     flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
   }
 
-  .footer_element
-  {
-    padding: 0;
-  } 
+  
 }
 
 
